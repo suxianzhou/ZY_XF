@@ -16,7 +16,7 @@
 
 #define NAV_TITLE @"消防资讯"
 
-#define MAIN_INDEX [NSURL URLWithString:@"http://www.zhongyuedu.com/tgm/test/test15/index.html"]
+#define MAIN_INDEX [NSURL URLWithString:@"http://jz.zhongyuedu.com/list.php?fid=55"]
 //>> 资讯
 #define SERVERS_INDEX @"http://api.zhongyuedu.com/tik/xf/examtype.php"
 //>> 题库目录
