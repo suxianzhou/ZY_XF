@@ -5,7 +5,11 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
+<<<<<<< HEAD
 	<string>消防工程师</string>
+=======
+	<string>消防工程师中域题库－二级／一级注册消防工程师通关宝典</string>
+>>>>>>> RyeWhiskeyBourbon/master
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

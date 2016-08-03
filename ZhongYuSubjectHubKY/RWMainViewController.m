@@ -14,6 +14,7 @@
 #import "RWMainViewController+Drawer.h"
 #import "RWMainViewController+CountDownView.h"
 #import "RWCustomizeToolBar.h"
+#import "RWRequsetManager+ExamineVersion.h"
 
 @interface RWMainViewController ()
 
@@ -99,6 +100,14 @@
     {
         [self addWebToolBar];
     }
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        if (_informationView.isLoading)
+        {
+            [SVProgressHUD dismiss];
+        }
+    });
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
@@ -179,6 +188,7 @@
     
     MAIN_NAV
     
+    [RWRequsetManager examineVersionWithController:self];
     [RWRequsetManager obtainExperienceTimes];
     
     [self initManagersAndDatas];
@@ -223,7 +233,9 @@
     
     [SVProgressHUD dismiss];
     
-    [RWRequsetManager warningToViewController:self Title:@"服务器连接失败" Click:nil];
+    [RWRequsetManager warningToViewController:self
+                                        Title:@"服务器连接失败"
+                                        Click:nil];
 }
 
 #pragma mark +CountDown

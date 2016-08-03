@@ -9,6 +9,11 @@
 #ifndef RWRequestIndex_h
 #define RWRequestIndex_h
 
+#define APP_ID @"1133369306"
+
+#define APP_STORE_URL @"http://itunes.apple.com/cn/lookup?id="APP_ID
+#define TO_APP_STORE @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id="APP_ID
+
 #define UMengCommunityAppkey @"5780521867e58e49280043b0"
 #define UMengCommunityAppSecret @"f1b6300f5e970785faef0055a18e3a0e"
 
@@ -16,7 +21,7 @@
 
 #define NAV_TITLE @"消防资讯"
 
-#define MAIN_INDEX [NSURL URLWithString:@"http://www.zhongyuedu.com/tgm/test/test15/index.html"]
+#define MAIN_INDEX [NSURL URLWithString:@"http://jz.zhongyuedu.com/list.php?fid=55"]
 //>> 资讯
 #define SERVERS_INDEX @"http://api.zhongyuedu.com/tik/xf/examtype.php"
 //>> 题库目录
