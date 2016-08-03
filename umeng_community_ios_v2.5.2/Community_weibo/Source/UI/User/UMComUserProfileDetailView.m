@@ -245,6 +245,7 @@
 
 - (void)reloadSubViewsWithUser:(UMComUser *)user
 {
+    
     NSString *scoreStr = [NSString stringWithFormat:@"%@",countString(user.point)];
 //    CGSize titleSize = [scoreStr sizeWithFont:UMComFontNotoSansLightWithSafeSize(UMCom_Forum_UserCenter_ProfileButtonFont) forWidth:100 lineBreakMode:NSLineBreakByTruncatingTail];
     CGFloat imageWidth = 20;

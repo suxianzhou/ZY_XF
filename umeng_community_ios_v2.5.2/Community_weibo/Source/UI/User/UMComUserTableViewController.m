@@ -108,6 +108,8 @@ static NSString *UMComUserTableViewCellIdentifier = @"UMComUserTableViewCellIden
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    NSLog(@"use = = %@",self.dataArray[indexPath.row]);
     UMComUser *user = self.dataArray[indexPath.row];
     if (_callbackBlock) {
         _callbackBlock(self, UMComUserTableViewCallBackEventUser, user);

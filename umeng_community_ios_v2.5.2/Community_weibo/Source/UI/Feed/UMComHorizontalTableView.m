@@ -165,6 +165,8 @@
     __weak UMComHorizontalTableView *weakSelf = self;
 
     [self.userFetchRequest fetchRequestFromServer:^(NSArray *data, BOOL haveNextPage, NSError *error) {
+        
+      
         weakSelf.userList = data;
         if (error) {
             if([UMComSession sharedInstance].isLogin)

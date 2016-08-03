@@ -315,6 +315,8 @@
 
 - (void)customObj:(id)obj clickOnUser:(UMComUser *)user
 {
+    NSLog(@"0--0  %@",user);
+    
     //如果是在个人中心页面且点击的用户刚好是个人中心的用户， 则不跳转
     if ([self.fetchRequest isKindOfClass:[UMComUserFeedsRequest class]]) {
         UMComUserFeedsRequest *userFeedRequest = (UMComUserFeedsRequest *)self.fetchRequest;

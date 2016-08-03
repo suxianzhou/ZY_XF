@@ -9,7 +9,7 @@
 #import "RWRequsetManager+UserLogin.h"
 #import "UMComPushRequest.h"
 #import "UMComUserAccount.h"
-
+#import "UMComHttpManager.h"
 @implementation RWRequsetManager (UserLogin)
 
 - (void)registerWithUsername:(NSString *)username AndPassword:(NSString *)password verificationCode:(NSString *)verificationCode
@@ -70,10 +70,12 @@
                                 ErrorReason:error.description];
         }
     }];
+    
 }
 
 - (void)userinfoWithUsername:(NSString *)username AndPassword:(NSString *)password
 {
+    
     RWDeployManager *deploy = [RWDeployManager defaultManager];
     
     UMComUserAccount *userAccount = [[UMComUserAccount alloc] init];
@@ -92,6 +94,7 @@
             [self.manager POST:LOGIN_URL parameters:body progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
                 
                 NSDictionary *Json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+                
                 
                 if ([[Json objectForKey:@"resultCode"] integerValue] == 200)
                 {
@@ -122,6 +125,9 @@
                                  ErrorReason:error.description];
         }
     }];
+    
+    
+    
 }
 
 - (void)replacePasswordWithUsername:(NSString *)username AndPassword:(NSString *)password verificationCode:(NSString *)verificationCode
